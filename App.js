@@ -1,86 +1,42 @@
-import React from 'react';
-import { StyleSheet, Button, View, SafeAreaView, Text, Alert } from 'react-native';
+import React, { Component } from 'react'
+import { View, Text, Checkbox } from 'react-native'
 
-const Separator = () => (
-  <View style={styles.separator} />
-);
+const App = () => {
+    return (
+        
+        <View style={{backgroundColor: '#AED6F1',flex: 1}}>
+            
+            <Text style={{ fontSize: 25, fontWeight: 'bold', color: 'white', textAlign: 'center'}}>{"\n"}RISK ASSESSMENT  </Text>
+            <Text style={{ fontSize: 15, textAlign: 'center'}}>{"\n"}ท่านมีประวัติเสี่ยงต่อการติดเชื้อหรือไม่</Text>
+            <Text style={{ textAlign: 'center'}}>_____________________________________________________{"\n"}</Text>
 
-const App = () => (
-  <SafeAreaView style={styles.container}>
-    <View style={{flexDirection: "column",height: 200}}>
-      <View style={{ backgroundColor: "blue", flex: 0.5 }}>
-      <Text style={{ fontSize: 40, fontWeight: 'bold', color: 'white',textAlign: "center",margin: 20}}>Hello WOrld</Text></View>
-    </View>
-    <Separator />
-    <View>
-      <Text style={styles.title}>
-        The title and onPress handler are required. It is recommended to set accessibilityLabel to help make your app usable by everyone.
-      </Text>
-      <Button
-        title="Press me"
-        onPress={() => Alert.alert('Simple Button pressed')}
-      />
-    </View>
-    <Separator />
-    <View>
-      <Text style={styles.title}>
-        Adjust the color in a way that looks standard on each platform. On  iOS, the color prop controls the color of the text. On Android, the color adjusts the background color of the button.
-      </Text>
-      <Button
-        title="Press me"
-        color="#f194ff"
-        onPress={() => Alert.alert('Button with adjusted color pressed')}
-      />
-    </View>
-    <Separator />
-    <View>
-      <Text style={styles.title}>
-        All interaction for the component are disabled.
-      </Text>
-      <Button
-        title="Press me"
-        disabled
-        onPress={() => Alert.alert('Cannot press this one')}
-      />
-    </View>
-    <Separator />
-    <View>
-      <Text style={styles.title}>
-        This layout strategy lets the title define the width of the button.
-      </Text>
-      <View style={styles.fixToText}>
-        <Button
-          title="Left button"
-          onPress={() => Alert.alert('Left button pressed')}
-        />
-        <Button
-          title="Right button"
-          onPress={() => Alert.alert('Right button pressed')}
-        />
-      </View>
-    </View>
-  </SafeAreaView>
-);
+            <Text style={{ textAlign: 'left'}}>{"\t"}ข้อที่ 1 : ท่านเดินทางมาจากหรืออาศัยในพื้นที่</Text>
+            <Text>                  ที่มีรายงานการติดเชื้อ COVID-19 ใน 1 เดือนที่ผ่านมา</Text>
+            <Text style={{ textAlign: 'left',}}>{"\t"}ข้อที่ 1.1 : ท่านเดินทางมาจากต่างประเทศ ทุกประเทศ</Text>
+            <Text>                  ในช่วง 1 เดือนที่ผ่านมาหรือไม่{"\n"}</Text>
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    marginHorizontal: 16,
-  },
-  title: {
-    textAlign: 'center',
-    marginVertical: 8,
-  },
-  fixToText: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  separator: {
-    marginVertical: 8,
-    borderBottomColor: '#737373',
-    borderBottomWidth: StyleSheet.hairlineWidth,
-  },
-});
 
-export default App;
+
+            <Text style={{ textAlign: 'left',}}>{"\t"}ข้อที่ 1.2 : (ภายในประเทศไทย) ท่านได้เดินทางมาจาก</Text>
+            <Text>                  หรืออาศัยอยู่ในพื้นที่มีการายงานการติดเชื้อ</Text>
+            <Text>                  ในช่วง 1 เดือนที่ผ่านมาหรือไม่</Text>
+            <Text style={{textAlign: 'center', color: 'red'}}>* * พื้นที่เสี่ยงโปรดดูประกาศตามแต่ละพื้นที่ * *{"\n"}</Text>
+            <Text style={{ textAlign: 'left'}}>{"\t"}ข้อที่ 2 : ท่านทำงานในสถานกักกันโรค</Text>
+            <Text>                  (State quarantine หรือ locat quarantine){"\n"}</Text>
+            <Text style={{ textAlign: 'left'}}>{"\t"}ข้อที่ 3 : มีประวัติสัมผัสกับผู้ป่วยยืนยันโรคติดเชื้อไวรัส COVID-19{"\n"}</Text>
+            <Text style={{ textAlign: 'left'}}>{"\t"}ข้อที่ 4 : เป็นบุคคลทางการแพทย์หรือสาธารณสุข </Text>
+            <Text>                  ทั้งสถานพยาบาล,คลินิก,ทีมสอบสวนโรค หรือร้านยา{"\n"}</Text>
+            <Text style={{ textAlign: 'left'}}>{"\t"}ข้อที่ 5 : มีประวัติไปในสถานที่ประชาชนหนาแน่น </Text>
+            <Text>                  ชุมนุม หรือที่มีการรวมกลุ่มคน เช่น ตลาดนัด</Text>
+            <Text>                  ห้างสรรพสินค้า สถานพยาบาลหรือขนส่งสาธารณะ</Text>
+            <Text>                  ที่พบผู้สงสัยหรือยืนยัน COVID-19</Text>
+            <Text>                  ในช่วง 1 เดือนที่ผ่านมาหรือไม่</Text>
+        </View>
+        
+
+        
+        
+    )
+}
+
+export default App 
