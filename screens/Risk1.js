@@ -1,7 +1,7 @@
 import React from 'react';
 import {ImageBackground, StyleSheet, View, Text, Button, Image} from 'react-native';
 
-const App = () => {
+const Risk1 = () => {
   return (
     <View
       style={{
@@ -12,9 +12,9 @@ const App = () => {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <Text style={{ fontSize: 35, fontWeight: 'bold', color: 'white',textAlign: 'right'}}>RISK ASSESSMENT</Text>
+      <Text style={{ fontSize: 30, fontWeight: 'bold', color: 'white',textAlign: 'right'}}>RISK ASSESSMENT</Text>
       <Text style={{ fontSize: 17, fontWeight: 'bold', color: 'white',textAlign: 'right'}}>FOR COVID-19 INFECTION{"\n"}</Text>
-      <Image source={require('../SF341-Proj/img/icon.png')} style={{width: 180,height:180}}></Image>
+      <Image source={require('../SF341-Proj/img/icon.png')} style={{width: 160,height:160}}></Image>
       <Text style={{color: '#229954'}}>
       {"\n"}กรุณาให้ข้อมูลตามความเป็นจริงเพื่อประโยชน์ของท่าน
       </Text>
@@ -33,9 +33,20 @@ const App = () => {
       <Text style={{color: 'grey'}}>แบบสอบถามนี้เก็ฐข้อมูลโดยไม่ระบุตัวตน</Text>
       <Text style={{color: 'grey'}}>เพื่อนำไปพัฒนาแบบสอบถามให้แม่นยำมากขึ้น{"\n\n"}</Text>
 
-      <Button title="Ready" color="#154360" />
+      <View style={styles.buttonContainer}> 
+            <Button style={styles.button}
+            title="ready" 
+            color="#154360" />
+        </View>
     </View>
   );
 };
+const styles = StyleSheet.create({
+    buttonContainer:{
+        marginTop:10,
+        width:90,
+        alignSelf:"center"
+    }
 
-export default App;
+})
+export default Risk1;

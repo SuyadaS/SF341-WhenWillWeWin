@@ -1,42 +1,52 @@
-import React, { Component } from 'react'
-import { View, Text, Checkbox } from 'react-native'
+import React from 'react';
+import {ImageBackground, StyleSheet, View, Text, Button, Image} from 'react-native';
 
-const App = () => {
-    return (
+const Risk1 = () => {
+  return (
+    <View
+      style={{
         
-        <View style={{backgroundColor: '#AED6F1',flex: 1}}>
-            
-            <Text style={{ fontSize: 25, fontWeight: 'bold', color: 'white', textAlign: 'center'}}>{"\n"}RISK ASSESSMENT  </Text>
-            <Text style={{ fontSize: 15, textAlign: 'center'}}>{"\n"}ท่านมีประวัติเสี่ยงต่อการติดเชื้อหรือไม่</Text>
-            <Text style={{ textAlign: 'center'}}>_____________________________________________________{"\n"}</Text>
+        backgroundColor: '#AED6F1',
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+      }}>
+      <Text style={{ fontSize: 30, fontWeight: 'bold', color: 'white',textAlign: 'right'}}>RISK ASSESSMENT</Text>
+      <Text style={{ fontSize: 17, fontWeight: 'bold', color: 'white',textAlign: 'right'}}>FOR COVID-19 INFECTION{"\n"}</Text>
+      <Image source={require('../SF341-Proj/img/icon.png')} style={{width: 160,height:160}}></Image>
+      <Text style={{color: '#229954'}}>
+      {"\n"}กรุณาให้ข้อมูลตามความเป็นจริงเพื่อประโยชน์ของท่าน
+      </Text>
+      <Text style={{color: '#229954'}}>
+        การมาที่โรงพยาบาลโดยไม่มีความจำเป็น
+      </Text>
+      <Text style={{color: '#229954'}}>
+        อาจทำให้ท่านเสี่ยงการติดเชื้อมากขึ้น
+      </Text>
+      <Text>_____________________________________________________{"\n"}</Text>
+      <Text>หมายเหตุ จุดประสงค์ของแบบสอบถามนี้</Text>
+      <Text>เพื่อการประชาสัมพันธ์การดูแลตนเองให้ปลอดภัย</Text>
+      <Text>และลดการมาโรงพยาบาลโดยไม่จำเป็น</Text>
+      <Text>สำหรับประชาชนทั่วไป{"\n"}</Text>
 
-            <Text style={{ textAlign: 'left'}}>{"\t"}ข้อที่ 1 : ท่านเดินทางมาจากหรืออาศัยในพื้นที่</Text>
-            <Text>                  ที่มีรายงานการติดเชื้อ COVID-19 ใน 1 เดือนที่ผ่านมา</Text>
-            <Text style={{ textAlign: 'left',}}>{"\t"}ข้อที่ 1.1 : ท่านเดินทางมาจากต่างประเทศ ทุกประเทศ</Text>
-            <Text>                  ในช่วง 1 เดือนที่ผ่านมาหรือไม่{"\n"}</Text>
+      <Text style={{color: 'grey'}}>แบบสอบถามนี้เก็ฐข้อมูลโดยไม่ระบุตัวตน</Text>
+      <Text style={{color: 'grey'}}>เพื่อนำไปพัฒนาแบบสอบถามให้แม่นยำมากขึ้น{"\n\n"}</Text>
 
-
-
-            <Text style={{ textAlign: 'left',}}>{"\t"}ข้อที่ 1.2 : (ภายในประเทศไทย) ท่านได้เดินทางมาจาก</Text>
-            <Text>                  หรืออาศัยอยู่ในพื้นที่มีการายงานการติดเชื้อ</Text>
-            <Text>                  ในช่วง 1 เดือนที่ผ่านมาหรือไม่</Text>
-            <Text style={{textAlign: 'center', color: 'red'}}>* * พื้นที่เสี่ยงโปรดดูประกาศตามแต่ละพื้นที่ * *{"\n"}</Text>
-            <Text style={{ textAlign: 'left'}}>{"\t"}ข้อที่ 2 : ท่านทำงานในสถานกักกันโรค</Text>
-            <Text>                  (State quarantine หรือ locat quarantine){"\n"}</Text>
-            <Text style={{ textAlign: 'left'}}>{"\t"}ข้อที่ 3 : มีประวัติสัมผัสกับผู้ป่วยยืนยันโรคติดเชื้อไวรัส COVID-19{"\n"}</Text>
-            <Text style={{ textAlign: 'left'}}>{"\t"}ข้อที่ 4 : เป็นบุคคลทางการแพทย์หรือสาธารณสุข </Text>
-            <Text>                  ทั้งสถานพยาบาล,คลินิก,ทีมสอบสวนโรค หรือร้านยา{"\n"}</Text>
-            <Text style={{ textAlign: 'left'}}>{"\t"}ข้อที่ 5 : มีประวัติไปในสถานที่ประชาชนหนาแน่น </Text>
-            <Text>                  ชุมนุม หรือที่มีการรวมกลุ่มคน เช่น ตลาดนัด</Text>
-            <Text>                  ห้างสรรพสินค้า สถานพยาบาลหรือขนส่งสาธารณะ</Text>
-            <Text>                  ที่พบผู้สงสัยหรือยืนยัน COVID-19</Text>
-            <Text>                  ในช่วง 1 เดือนที่ผ่านมาหรือไม่</Text>
+      <View style={styles.buttonContainer}> 
+            <Button style={styles.button}
+            title="ready" 
+            color="#154360" />
         </View>
-        
+    </View>
+  );
+};
+const styles = StyleSheet.create({
+    buttonContainer:{
+        marginTop:10,
+        width:90,
+        alignSelf:"center"
+    }
 
-        
-        
-    )
-}
-
-export default App 
+})
+export default Risk1;
