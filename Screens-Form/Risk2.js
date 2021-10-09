@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component, useState } from "react";
 import {Text, StyleSheet, View, Button } from "react-native";
 import CheckBox from 'react-native-checkbox';
 import { NavigationContainer } from '@react-navigation/native';

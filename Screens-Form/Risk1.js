@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {ImageBackground, StyleSheet, View, Text, Button, Image} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -16,7 +16,7 @@ function Risk1({navigation}) {
       }}>
       <Text style={{ fontSize: 30, fontWeight: 'bold', color: 'white',textAlign: 'right'}}>RISK ASSESSMENT</Text>
       <Text style={{ fontSize: 17, fontWeight: 'bold', color: 'white',textAlign: 'right'}}>FOR COVID-19 INFECTION{"\n"}</Text>
-      <Image source={require('../SF341-Proj/img/icon.png')} style={{width: 160,height:160}}></Image>
+      <Image source={require('./icon.png')} style={{width: 160,height:160}}></Image>
       <Text style={{color: '#229954'}}>
       {"\n"}กรุณาให้ข้อมูลตามความเป็นจริงเพื่อประโยชน์ของท่าน
       </Text>
@@ -42,7 +42,7 @@ function Risk1({navigation}) {
             onPress={() =>
               navigation.navigate('Risk2')}
             />
-        </View>
+      </View>
     </View>
   );
 };
