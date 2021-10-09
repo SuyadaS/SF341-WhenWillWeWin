@@ -1,7 +1,9 @@
 import React from 'react';
 import { View, Text, Button, Image, StyleSheet} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const No = () => {
+function No({navigation}) {
   return (
     <View
       style={{
@@ -21,7 +23,10 @@ const No = () => {
       <View style={styles.buttonContainer}> 
             <Button style={styles.button}
             title="done" 
-            color="#154360" />
+            color="#154360"
+            onPress={() => 
+              navigation.navigate('HomeTest')}
+             />
         </View>
       
       

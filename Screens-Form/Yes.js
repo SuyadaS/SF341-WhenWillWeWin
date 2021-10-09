@@ -1,7 +1,10 @@
 import React from 'react';
 import { View, Text, Button, Image, StyleSheet} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Yes = () => {
+
+function Yes({navigation}) {
   return (
     <View
       style={{
@@ -21,7 +24,11 @@ const Yes = () => {
       <View style={styles.buttonContainer}> 
             <Button style={styles.button}
             title="done" 
-            color="#154360" />
+            color="#154360"
+            onPress={() => 
+              navigation.navigate('HomeTest')}
+
+            />
         </View>
       
       

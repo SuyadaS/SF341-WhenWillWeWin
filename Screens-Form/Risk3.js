@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import {Text, StyleSheet, View, Button } from "react-native";
 import CheckBox from 'react-native-checkbox';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
-
-const Risk3 = () => {
+function Risk3({navigation}) {
   const [isSelected, setSelection] = useState(false);
 
   return (
@@ -66,7 +67,10 @@ const Risk3 = () => {
         <View style={styles.buttonContainer}> 
             <Button style={styles.button}
             title="done" 
-            color="#154360" />
+            color="#154360" 
+            onPress={() => 
+              navigation.navigate('No')}
+            />
         </View>
     </View>
     

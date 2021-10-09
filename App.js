@@ -10,6 +10,8 @@ import Related from './Screens-Info/Related'
 import Risk1 from './Screens-Form/Risk1'
 import Risk2 from './Screens-Form/Risk2'
 import Risk3 from './Screens-Form/Risk3'
+import Yes from './Screens-Form/Yes'
+import No from './Screens-Form/No'
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +27,8 @@ const App = () => {
         <Stack.Screen name="Risk1" component={Risk1} />
         <Stack.Screen name="Risk2" component={Risk2} />
         <Stack.Screen name="Risk3" component={Risk3} />
+        <Stack.Screen name="Yes" component={Yes} />
+        <Stack.Screen name="No" component={No} />
       </Stack.Navigator>
     </NavigationContainer>
   );
