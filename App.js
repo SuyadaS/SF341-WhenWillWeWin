@@ -12,6 +12,7 @@ import Risk2 from './Screens-Form/Risk2'
 import Risk3 from './Screens-Form/Risk3'
 import Yes from './Screens-Form/Yes'
 import No from './Screens-Form/No'
+import DailyCase from './Screens-Home/DailyCase'
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +30,7 @@ const App = () => {
         <Stack.Screen name="Risk3" component={Risk3} />
         <Stack.Screen name="Yes" component={Yes} />
         <Stack.Screen name="No" component={No} />
+        <Stack.Screen name="DailyCase" component={DailyCase} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -16,6 +16,11 @@ function Test({navigation}) {
                 onPress={() =>
                     navigation.navigate('InfoHome')}
             />
+            <Button
+                title="Go to Daily news"
+                onPress={() =>
+                    navigation.navigate('DailyCase')}
+            />
         </View> 
     )
 }
