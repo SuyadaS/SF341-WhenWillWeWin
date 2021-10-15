@@ -3,9 +3,11 @@ import {Text, StyleSheet, View, Button } from "react-native";
 import CheckBox from 'react-native-checkbox';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { RadioButton } from 'react-native-paper';
 
 function Risk2({navigation}) {
-    const [isSelected, setSelection] = useState(false);
+    const [value, setValue] = useState(false);
+    
     return (
         
         <View style={styles.container}>
@@ -19,18 +21,16 @@ function Risk2({navigation}) {
             <Text style={{ textAlign: 'left',}}>{"\t"}ข้อที่ 1.1 : ท่านเดินทางมาจากต่างประเทศ ทุกประเทศ</Text>
             <Text>                  ในช่วง 1 เดือนที่ผ่านมาหรือไม่{"\n"}</Text>
             <View style={styles.checkboxContainer}>
-                <CheckBox style={styles.checkbox}
-                    label='Yes'
-                    value={isSelected}
-                    onValueChange={setSelection}
-                    style={styles.checkbox}
-                />
-                <CheckBox style={styles.checkbox}
-                    label='No '
-                    value={isSelected}
-                    onValueChange={setSelection}
-                    style={styles.checkbox}
-                />
+            <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
+                <View style={{flexDirection: "row"}}>
+                    <RadioButton value="yes" />
+                    <Text>YES</Text>
+                </View>
+                <View style={{flexDirection: "row"}}>
+                    <RadioButton value="no" />
+                    <Text>NO</Text>
+                </View>
+            </RadioButton.Group>
             </View>
 
             <Text style={{ textAlign: 'left',}}>{"\t"}ข้อที่ 1.2 : (ภายในประเทศไทย) ท่านได้เดินทางมาจาก</Text>
@@ -38,36 +38,19 @@ function Risk2({navigation}) {
             <Text>                  ในช่วง 1 เดือนที่ผ่านมาหรือไม่</Text>
             <Text style={{textAlign: 'center', color: 'red'}}>* * พื้นที่เสี่ยงโปรดดูประกาศตามแต่ละพื้นที่ * *{"\n"}</Text>
             <View style={styles.checkboxContainer}>
-                <CheckBox style={styles.checkbox}
-                    label='Yes'
-                    value={isSelected}
-                    onValueChange={setSelection}
-                    style={styles.checkbox}
-                />
-                <CheckBox style={styles.checkbox}
-                    label='No '
-                    value={isSelected}
-                onValueChange={setSelection}
-                    style={styles.checkbox}
-                />
+            <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
+                <View style={{flexDirection: "row"}}>
+                    <RadioButton value="yes" />
+                    <Text>YES</Text>
+                </View>
+                <View style={{flexDirection: "row"}}>
+                    <RadioButton value="no" />
+                    <Text>NO</Text>
+                </View>
+            </RadioButton.Group>
             </View>
 
-            <Text style={{ textAlign: 'left'}}>{"\t"}ข้อที่ 2 : ท่านทำงานในสถานกักกันโรค</Text>
-            <Text>                  (State quarantine หรือ locat quarantine){"\n"}</Text>
-            <View style={styles.checkboxContainer}>
-                <CheckBox style={styles.checkbox}
-                    label='Yes'
-                    value={isSelected}
-                    onValueChange={setSelection}
-                    style={styles.checkbox}
-                />
-                <CheckBox style={styles.checkbox}
-                    label='No '
-                    value={isSelected}
-                    onValueChange={setSelection}
-                    style={styles.checkbox}
-                />
-            </View>
+            
 
             <View style={styles.buttonContainer}> 
                 <Button style={styles.button}
@@ -105,7 +88,7 @@ const styles = StyleSheet.create({
       margin: 8,
     },
     buttonContainer:{
-        marginTop:50,
+        marginTop:0,
         width:90,
         alignSelf:"center"
     }
