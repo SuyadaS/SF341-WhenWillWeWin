@@ -7,7 +7,13 @@ import { RadioButton } from 'react-native-paper';
 
 
 function Risk4({navigation}) {
-  const [value, setValue] = useState(false);
+  const [count, setCounter] = useState(0);
+  const [value5, setValue5] = useState(false);
+  const [value6, setValue6] = useState(false);
+
+  const setCount = () => {
+    setCounter(count + 1);
+  };
 
   return (
     <View style={styles.container}>
@@ -17,13 +23,15 @@ function Risk4({navigation}) {
         <Text style={{ textAlign: 'left'}}>{"\t"}ข้อที่ 4 : เป็นบุคคลทางการแพทย์หรือสาธารณสุข </Text>
         <Text>                  ทั้งสถานพยาบาล,คลินิก,ทีมสอบสวนโรค หรือร้านยา{"\n"}</Text>
         <View style={styles.checkboxContainer}>
-          <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
+          <RadioButton.Group onValueChange={newValue => setValue5(newValue)} value={value5}>
             <View style={{flexDirection: "row"}}>
-                <RadioButton value="yes" />
+                <RadioButton 
+                value="yes5" 
+                onPress={setCount}/>
                 <Text>YES</Text>
             </View>
             <View style={{flexDirection: "row"}}>
-                <RadioButton value="no" />
+                <RadioButton value="no5" />
                 <Text>NO</Text>
             </View>
           </RadioButton.Group>
@@ -35,13 +43,16 @@ function Risk4({navigation}) {
         <Text>                  ในช่วง 1 {"\n"}</Text>
 
         <View style={styles.checkboxContainer}>
-          <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
+          <RadioButton.Group onValueChange={newValue => setValue6(newValue)} value={value6}>
             <View style={{flexDirection: "row"}}>
-                <RadioButton value="yes" />
+                <RadioButton 
+                value="yes6" 
+                onPress={setCount}
+                />
                 <Text>YES</Text>
             </View>
             <View style={{flexDirection: "row"}}>
-                <RadioButton value="no" />
+                <RadioButton value="no6" />
                 <Text>NO</Text>
             </View>
           </RadioButton.Group>

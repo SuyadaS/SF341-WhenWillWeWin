@@ -16,6 +16,8 @@ import No from './Screens-Form/No'
 import DailyCase from './Screens-Home/DailyCase'
 
 const Stack = createNativeStackNavigator();
+const yesValue = [];
+const noValue = [];
 
 const App = () => {
   return (
