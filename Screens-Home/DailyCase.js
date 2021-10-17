@@ -53,12 +53,12 @@ export default class App extends React.Component {
                     <Button
                         title="ข้อมูล"
                         color="#841584"
-                        onPress={() =>
-                            navigation.navigate('Emergency')}
+                        onPress={() => this.props.navigation.navigate('InfoHome')}
                     />
                     <Button
                         title="แบบประเมินความเสี่ยง"
                         color="#841584"
+                        onPress={() => this.props.navigation.navigate('Risk1')}
                     />
                 </View>
             )
