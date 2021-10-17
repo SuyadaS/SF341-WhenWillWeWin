@@ -7,7 +7,13 @@ import { RadioButton } from 'react-native-paper';
 
 
 function Risk3({navigation}) {
-  const [value, setValue] = useState(false);
+  const [count, setCounter] = useState(0);
+  const [value3, setValue3] = useState(false);
+  const [value4, setValue4] = useState(false);
+
+  const setCount = () => {
+    setCounter(count + 1);
+  };
 
   return (
     <View style={styles.container}>
@@ -17,26 +23,32 @@ function Risk3({navigation}) {
         <Text style={{ textAlign: 'left'}}>{"\t"}ข้อที่ 2 : ท่านทำงานในสถานกักกันโรค</Text>
       <Text>                  (State quarantine หรือ locat quarantine){"\n"}</Text>
       <View style={styles.checkboxContainer}>
-        <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
+        <RadioButton.Group onValueChange={newValue => setValue3(newValue)} value={value3}>
           <View style={{flexDirection: "row"}}>
-            <RadioButton value="yes" />
+            <RadioButton 
+            value="yes3" 
+            onPress={setCount}
+            />
             <Text>YES</Text>
           </View>
           <View style={{flexDirection: "row"}}>
-            <RadioButton value="no" />
+            <RadioButton value="no3" />
             <Text>NO</Text>
           </View>
         </RadioButton.Group>
       </View>
         <Text style={{ textAlign: 'left'}}>{"\t"}ข้อที่ 3 : มีประวัติสัมผัสกับผู้ป่วยยืนยันโรคติดเชื้อไวรัส COVID-19{"\n"}</Text>
         <View style={styles.checkboxContainer}>
-          <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
+          <RadioButton.Group onValueChange={newValue => setValue4(newValue)} value={value4}>
             <View style={{flexDirection: "row"}}>
-              <RadioButton value="yes" />
+              <RadioButton 
+              value="yes4" 
+              onPress={setCount}
+              />
               <Text>YES</Text>
             </View>
             <View style={{flexDirection: "row"}}>
-              <RadioButton value="no" />
+              <RadioButton value="no4" />
               <Text>NO</Text>
             </View>
           </RadioButton.Group>

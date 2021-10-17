@@ -6,7 +6,14 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RadioButton } from 'react-native-paper';
 
 function Risk2({navigation}) {
-    const [value, setValue] = useState(false);
+    const [count, setCounter] = useState(0);
+    const [value1, setValue1] = useState(false);
+    const [value2, setValue2] = useState(false);
+
+    const setCount = () => {
+        setCounter(count + 1);
+    };
+    
     
     return (
         
@@ -21,13 +28,17 @@ function Risk2({navigation}) {
             <Text style={{ textAlign: 'left',}}>{"\t"}ข้อที่ 1.1 : ท่านเดินทางมาจากต่างประเทศ ทุกประเทศ</Text>
             <Text>                  ในช่วง 1 เดือนที่ผ่านมาหรือไม่{"\n"}</Text>
             <View style={styles.checkboxContainer}>
-            <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
+            <RadioButton.Group onValueChange={newValue => setValue1(newValue)} value={value1}>
                 <View style={{flexDirection: "row"}}>
-                    <RadioButton value="yes" />
+                    <RadioButton 
+                        value="yes1"
+                        onPress={setCount}
+                    />
                     <Text>YES</Text>
                 </View>
                 <View style={{flexDirection: "row"}}>
-                    <RadioButton value="no" />
+                    <RadioButton 
+                        value="no1" />
                     <Text>NO</Text>
                 </View>
             </RadioButton.Group>
@@ -38,17 +49,21 @@ function Risk2({navigation}) {
             <Text>                  ในช่วง 1 เดือนที่ผ่านมาหรือไม่</Text>
             <Text style={{textAlign: 'center', color: 'red'}}>* * พื้นที่เสี่ยงโปรดดูประกาศตามแต่ละพื้นที่ * *{"\n"}</Text>
             <View style={styles.checkboxContainer}>
-            <RadioButton.Group onValueChange={newValue => setValue(newValue)} value={value}>
+            <RadioButton.Group onValueChange={newValue => setValue2(newValue)} value={value2}>
                 <View style={{flexDirection: "row"}}>
-                    <RadioButton value="yes" />
+                    <RadioButton 
+                        value="yes2"
+                        onPress={setCount}
+                    />
                     <Text>YES</Text>
                 </View>
                 <View style={{flexDirection: "row"}}>
-                    <RadioButton value="no" />
+                    <RadioButton value="no2" />
                     <Text>NO</Text>
                 </View>
             </RadioButton.Group>
             </View>
+            {/* <Text>{count}</Text> */}
 
             
 

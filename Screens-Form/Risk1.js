@@ -32,7 +32,7 @@ function Risk1({navigation}) {
       <Text>และลดการมาโรงพยาบาลโดยไม่จำเป็น</Text>
       <Text>สำหรับประชาชนทั่วไป{"\n"}</Text>
 
-      <Text style={{color: 'grey'}}>แบบสอบถามนี้เก็ฐข้อมูลโดยไม่ระบุตัวตน</Text>
+      <Text style={{color: 'grey'}}>แบบสอบถามนี้เก็บข้อมูลโดยไม่ระบุตัวตน</Text>
       <Text style={{color: 'grey'}}>เพื่อนำไปพัฒนาแบบสอบถามให้แม่นยำมากขึ้น{"\n\n"}</Text>
 
       <View style={styles.buttonContainer}> 
