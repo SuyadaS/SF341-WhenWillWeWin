@@ -26,7 +26,7 @@ function Yes({navigation}) {
             title="done" 
             color="#154360"
             onPress={() => 
-              navigation.navigate('DailyCase')}
+              navigation.navigate('Home')}
 
             />
         </View>

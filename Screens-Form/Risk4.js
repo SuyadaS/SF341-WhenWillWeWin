@@ -57,9 +57,15 @@ function Risk4({navigation , route}) {
             </View>
           </RadioButton.Group>
         </View>
-        <Text>{count}</Text>
+        {/* <Text>{count}</Text> */}
 
         <View style={styles.buttonContainer}>
+        <Button style={styles.button}
+            title="done" 
+            color="#154360" 
+            onPress={() => 
+            navigation.navigate('No')}
+          />
           {/* if ({count} == 0) {
             <Button style={styles.button}
             title="done" 

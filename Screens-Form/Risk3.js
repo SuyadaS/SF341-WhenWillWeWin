@@ -53,7 +53,7 @@ function Risk3({navigation , route}) {
             </View>
           </RadioButton.Group>
         </View>
-        <Text>{count}</Text>
+        {/* <Text>{count}</Text> */}
 
         <View style={styles.buttonContainer}> 
             <Button style={styles.button}
