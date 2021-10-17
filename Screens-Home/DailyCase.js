@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, Checkbox, Button } from 'react-native'
+import { StyleSheet, View, Text,ImageBackground, Checkbox, Button, Image } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -32,10 +32,15 @@ export default class App extends React.Component {
         });
     }
 
+
     render() {
         if (this.state.isLoading) {
             return (
                 <View style={styles.container}>
+                    <Image
+                        style={styles.tinyLogo}
+                        source={require('../img/icon_app.png')}
+                    />
                     <Text>loading</Text>
                 </View>
             )
@@ -43,23 +48,35 @@ export default class App extends React.Component {
 
             return (
                 <View style={styles.container}>
-                    <Text style={styles.date}>{this.state.date.split("-")[2]} {this.state.date.split("-")[1]} {this.state.date.split("-")[0]}</Text>
-                    <Text>ผู้ติดเชื้อวันนี้</Text>
-                    <Text style={styles.numberOfCase}>{this.state.newCase}</Text>
-                    <Text>ผู้ป่วยสะสมวันนี้</Text>
-                    <Text style={styles.numberOfCase}>{this.state.totalCase}</Text>
-                    <Text>เสียชีวิตเพิ่มวันนี้</Text>
-                    <Text style={styles.numberOfCase}>{this.state.newDeath}</Text>
-                    <Button
-                        title="ข้อมูล"
-                        color="#841584"
-                        onPress={() => this.props.navigation.navigate('InfoHome')}
+                    
+                    <Image
+                        style={styles.image}
+                        source={require('../img/icon_app.png')}
                     />
-                    <Button
-                        title="แบบประเมินความเสี่ยง"
-                        color="#841584"
-                        onPress={() => this.props.navigation.navigate('Risk1')}
-                    />
+                    <Text style={styles.date}>{this.state.date.split("-")[2]}/{this.state.date.split("-")[1]}/{this.state.date.split("-")[0]}</Text>
+                    <View style={styles.information}>
+                        <Text style={{fontSize: 20 }}>ผู้ติดเชื้อวันนี้</Text>
+                        <Text style={styles.numberOfCase}>{this.state.newCase}</Text>
+                        <Text style={{fontSize: 20}}>ผู้ป่วยสะสมวันนี้</Text>
+                        <Text style={styles.numberOfCase}>{this.state.totalCase}</Text>
+                        <Text style={{fontSize: 20}}>เสียชีวิตเพิ่มวันนี้</Text>
+                        <Text style={styles.numberOfCase}>{this.state.newDeath}</Text>
+                    </View>
+                    
+
+                    <View style={styles.inLine}>
+                        <Button
+                            title="ข้อมูล"
+                            color="#154360"
+                            onPress={() => this.props.navigation.navigate('InfoHome')}
+                        />
+                        <Button
+                            title="แบบประเมินความเสี่ยง"
+                            color="#154360"
+                            onPress={() => this.props.navigation.navigate('Risk1')}
+                        />
+                    </View>
+
                 </View>
             )
 
@@ -70,19 +87,43 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
+        padding: 40,
         backgroundColor: '#AED6F1',
         flex: 1,
-   
+        justifyContent: 'space-around',
         alignItems: 'center',
-        justifyContent: 'center',
     },
-    date:{
-        color: "#FFF000",
+    date: {
+        fontWeight: 'bold',
+        color: "#154360",
         fontSize: 30
     },
 
+    image: {
+        width: 150,
+        height: 150,
+        borderRadius: 150 / 2,
+        overflow: "hidden",
+        borderWidth: 3,
+      },
+    inLine: {
+        flexDirection: 'row',
+    },
+
     numberOfCase: {
+        fontWeight: 'bold',
         color: '#FF0000',
         fontSize: 30
+    },
+
+    tinyLogo: {
+        width: 150,
+        height: 150,
+    },
+
+    information: {
+        height: 250,
+        alignItems: 'center',
+        justifyContent: 'space-between',
     }
 })
