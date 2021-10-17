@@ -5,10 +5,11 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 function Home({navigation}) {
     return (
-        <View style={{backgroundColor: '#AED6F1',flex: 1}}>
+        <View style={styles.container}>
             <ImageBackground source={require('./0infohome.png')} resizeMode="cover" style={styles.image}>
                 <Button
                     title="Go to Emergency call"
+                    style={styles.button}
                     onPress={() =>
                         navigation.navigate('Emergency')}
                 />
@@ -35,7 +36,9 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: "center"
     },
-    button: {}
+    button: {
+        scaleX: 20,
+    }
   });
 
 export default Home;
