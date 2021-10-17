@@ -25,7 +25,7 @@ function No({navigation}) {
             title="done" 
             color="#154360"
             onPress={() => 
-              navigation.navigate('HomeTest')}
+              navigation.navigate('DailyCase')}
              />
         </View>
       
