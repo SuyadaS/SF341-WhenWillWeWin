@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, Checkbox, Button } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+
 export default class App extends React.Component {
 
     constructor(props) {
@@ -52,6 +53,8 @@ export default class App extends React.Component {
                     <Button
                         title="ข้อมูล"
                         color="#841584"
+                        onPress={() =>
+                            navigation.navigate('Emergency')}
                     />
                     <Button
                         title="แบบประเมินความเสี่ยง"
@@ -67,8 +70,9 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
+        backgroundColor: '#AED6F1',
         flex: 1,
-        backgroundColor: '#fff',
+   
         alignItems: 'center',
         justifyContent: 'center',
     },
