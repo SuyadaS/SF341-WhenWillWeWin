@@ -25,7 +25,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="DailyCase" component={DailyCase} />
+        <Stack.Screen name="Home" component={DailyCase} />
         <Stack.Screen name="InfoHome" component={InfoHome} />
         <Stack.Screen name="Donation" component={Donation} />
         <Stack.Screen name="Emergency" component={Emergency} />
