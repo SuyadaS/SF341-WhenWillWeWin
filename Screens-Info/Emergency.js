@@ -23,7 +23,7 @@ export default class tableExample extends Component {
             return (
                 <View style={styles.container}>
                     <ImageBackground source={require('./0emergencycall.png')} resizeMode="cover" style={styles.image}>
-                        <Table>
+                        <Table style={{justifyContent: 'center', paddingTop: 250, paddingLeft: 20, paddingRight: 20}}>
                             <Row data={state.headerData} style={styles.head} textStyle={styles.text}/>
                             <Rows data={state.tableContents} textStyle={styles.text}/>
                         </Table>
@@ -34,12 +34,9 @@ export default class tableExample extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: { flex: 1, padding: 16, paddingTop: 30, backgroundColor: '#AED6F1' },
+    container: { flex: 1,backgroundColor: '#AED6F1' },
     head: { height: 40, backgroundColor: '#f1f8ff' },
-    text: { margin: 6 },
-    container: {
-        flex: 1,
-      },
+    text: { margin: 6, padding: 5},
     image: {
         flex: 1,
         justifyContent: "center"
