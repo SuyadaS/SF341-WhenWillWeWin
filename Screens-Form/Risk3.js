@@ -7,7 +7,7 @@ import { RadioButton } from 'react-native-paper';
 
 
 function Risk3({navigation , route}) {
-  const {count} = route.params;
+  const [count,setCounter] = useState(route.params.count);
   const [value3, setValue3] = useState(false);
   const [value4, setValue4] = useState(false);
 
