@@ -13,21 +13,21 @@ function Home({ navigation }) {
                                 navigation.navigate('Emergency')}
                             style={styles.roundButton1}
                         >
-                            <Text style={{ color: "#052652", fontSize: 16 }}>สายด่วน</Text>
+                            <Text style={{ left:5, color: "#052652", fontSize: 25 ,fontWeight: 'bold'}}>สายด่วน</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             onPress={() =>
                                 navigation.navigate('Donation')}
                             style={styles.roundButton1}
                         >
-                            <Text style={{ color: "#052652", fontSize: 16 }}>การบริจาค</Text>
+                            <Text style={{left:5, color: "#052652", fontSize: 25 ,fontWeight: 'bold'}}>การบริจาค</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             onPress={() =>
                                 navigation.navigate('Related')}
                             style={styles.roundButton1}
                         >
-                            <Text style={{ color: "#052652", fontSize: 16 }}>แอปพลิเคชั่นรับมือโควิด19</Text>
+                            <Text style={{ left:5, color: "#052652", fontSize: 20 ,fontWeight: 'bold'}}>แอปพลิเคชั่นรับมือโควิด19</Text>
                         </TouchableOpacity>
                     </View>
 
