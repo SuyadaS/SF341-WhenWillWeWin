@@ -13,21 +13,21 @@ function Home({ navigation }) {
                                 navigation.navigate('Emergency')}
                             style={styles.roundButton1}
                         >
-                            <Text style={{ color: "#052652", fontSize: 14 }}>สายด่วน</Text>
+                            <Text style={{ color: "#052652", fontSize: 16 }}>สายด่วน</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             onPress={() =>
                                 navigation.navigate('Donation')}
                             style={styles.roundButton1}
                         >
-                            <Text style={{ color: "#052652", fontSize: 14 }}>การบริจาค</Text>
+                            <Text style={{ color: "#052652", fontSize: 16 }}>การบริจาค</Text>
                         </TouchableOpacity>
                         <TouchableOpacity
                             onPress={() =>
                                 navigation.navigate('Related')}
                             style={styles.roundButton1}
                         >
-                            <Text style={{ color: "#052652", fontSize: 14 }}>แอปพลิเคชั่นรับมือโควิด19</Text>
+                            <Text style={{ color: "#052652", fontSize: 16 }}>แอปพลิเคชั่นรับมือโควิด19</Text>
                         </TouchableOpacity>
                     </View>
 
@@ -43,17 +43,13 @@ const styles = StyleSheet.create({
         justifyContent: "space-around",
         alignItems: 'center'
     },
-    image2: {
-        flex: 1,
-        width: 400,
-        bottom: -200,
-        justifyContent: "center"
-    },
+ 
     image1: {
         flex: 1,
         width: 400,
         justifyContent: "center"
     },
+    
     button: {
         top: 50,
         marginBottom: 50,
@@ -61,15 +57,18 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: "center",
 
-
     },
+
     roundButton1: {
         marginTop: 60,
         width: 150,
         height: 150,
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 30,
+        paddingTop: 30,
+        paddingBottom: 30,
+        paddingLeft:10,
+        paddingRight:10,
         borderRadius: 100,
         backgroundColor: '#F0FBFF',
     },
