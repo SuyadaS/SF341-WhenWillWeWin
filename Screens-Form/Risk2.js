@@ -5,12 +5,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RadioButton } from 'react-native-paper';
 
-function Risk2({navigation}) {
+function Risk2({navigation, onCountChange}) {
     const [count, setCounter] = useState(0);
     const [value1, setValue1] = useState(false);
     const [value2, setValue2] = useState(false);
 
+
     const setCount = () => {
+        console.log(count + 1);
         setCounter(count + 1);
     };
     
@@ -18,7 +20,7 @@ function Risk2({navigation}) {
     return (
         
         <View style={styles.container}>
-            
+            {/* <Text>{count}</Text> */}
             <Text style={{ fontSize: 25, fontWeight: 'bold', color: 'white', textAlign: 'center'}}>{"\n"}RISK ASSESSMENT  </Text>
             <Text style={{ fontSize: 15, textAlign: 'center'}}>{"\n"}ท่านมีประวัติเสี่ยงต่อการติดเชื้อหรือไม่</Text>
             <Text style={{ textAlign: 'center'}}>_____________________________________________________{"\n\n"}</Text>
@@ -32,7 +34,7 @@ function Risk2({navigation}) {
                 <View style={{flexDirection: "row"}}>
                     <RadioButton 
                         value="yes1"
-                        onPress={setCount}
+                        onPress={() => setCount()}
                     />
                     <Text>YES</Text>
                 </View>
@@ -53,7 +55,7 @@ function Risk2({navigation}) {
                 <View style={{flexDirection: "row"}}>
                     <RadioButton 
                         value="yes2"
-                        onPress={setCount}
+                        onPress={() => setCount()}
                     />
                     <Text>YES</Text>
                 </View>
@@ -63,7 +65,7 @@ function Risk2({navigation}) {
                 </View>
             </RadioButton.Group>
             </View>
-            {/* <Text>{count}</Text> */}
+            
 
             
 
@@ -72,7 +74,7 @@ function Risk2({navigation}) {
                 title="next" 
                 color="#154360" 
                 onPress={() =>
-                    navigation.navigate('Risk3')}
+                    navigation.navigate('Risk3',{count})}
                 />
             </View>
         </View>

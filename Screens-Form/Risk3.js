@@ -6,8 +6,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { RadioButton } from 'react-native-paper';
 
 
-function Risk3({navigation}) {
-  const [count, setCounter] = useState(0);
+function Risk3({navigation , route}) {
+  const [count,setCounter] = useState(route.params.count);
   const [value3, setValue3] = useState(false);
   const [value4, setValue4] = useState(false);
 
@@ -53,13 +53,14 @@ function Risk3({navigation}) {
             </View>
           </RadioButton.Group>
         </View>
+        {/* <Text>{count}</Text> */}
 
         <View style={styles.buttonContainer}> 
             <Button style={styles.button}
             title="next" 
             color="#154360" 
             onPress={() => 
-              navigation.navigate('Risk4')}
+              navigation.navigate('Risk4',{count})}
             />
         </View>
     </View>
